@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15988836-27F5-4E16-A7A7-3FA3A771DEC8}</ProjectGuid>
+    <ProjectGuid>{248FAB8B-583C-4AC8-B98D-8DA3D319979D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OnlineRealEstateBL</RootNamespace>
@@ -41,9 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineRealEstateEntity\OnlineRealEstateEntity.csproj">
+      <Project>{a2c287d4-c28b-4555-b5e0-4b96af628d8b}</Project>
+      <Name>OnlineRealEstateEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineRealEstateRepositary\OnlineRealEstateDAL.csproj">
+      <Project>{a6435fc7-d235-474d-81d6-3c0a6f5a1033}</Project>
+      <Name>OnlineRealEstateDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

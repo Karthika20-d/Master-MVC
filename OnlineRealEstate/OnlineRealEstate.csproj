@@ -145,11 +145,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Land\Create.cshtml" />
     <Content Include="Views\Land\Edit.cshtml" />
-    <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Land\SignUp.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,13 +161,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineRealEstateBL\OnlineRealEstateBL.csproj">
+      <Project>{248fab8b-583c-4ac8-b98d-8da3d319979d}</Project>
+      <Name>OnlineRealEstateBL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineRealEstateEntity\OnlineRealEstateEntity.csproj">
       <Project>{a2c287d4-c28b-4555-b5e0-4b96af628d8b}</Project>
       <Name>OnlineRealEstateEntity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnlineRealEstateRepositary\OnlineRealEstateRepositary.csproj">
+    <ProjectReference Include="..\OnlineRealEstateRepositary\OnlineRealEstateDAL.csproj">
       <Project>{a6435fc7-d235-474d-81d6-3c0a6f5a1033}</Project>
-      <Name>OnlineRealEstateRepositary</Name>
+      <Name>OnlineRealEstateDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

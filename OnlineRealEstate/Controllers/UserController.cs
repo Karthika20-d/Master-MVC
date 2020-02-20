@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OnlineRealEstateEntity;
+using OnlineRealEstateBL;
 using System.Web.Mvc;
 
 namespace OnlineRealEstate.Controllers
@@ -14,10 +15,21 @@ namespace OnlineRealEstate.Controllers
         {
             return View();
         }
-        [HttpGet] 
         public ActionResult SignUp()
         {
-            ViewBag.Message = "Register successfull";
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SignUp(UserManager userManager)
+        {
+            if (ModelState.IsValid)
+            {
+                int userId = UserBL.SignUp(userManager);
+                if (userId > 0)
+                {
+                    ViewBag.Message = "Register successfull";
+                }
+            }
             return View();
         }
         [HttpGet]
