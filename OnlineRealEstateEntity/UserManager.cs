@@ -19,7 +19,7 @@ namespace OnlineRealEstateEntity
         [EmailAddress(ErrorMessage = "Please enter valid mail")]
         public string email { get; set; }
         [Required(ErrorMessage = "Please enter your phone number")]
-        [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}",ErrorMessage ="Please enter valid number")]
+        [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}",ErrorMessage ="Please enter your number")]
         public long phoneNumber { get; set; }
         [Required(ErrorMessage ="Please enter your password")]
         [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$",ErrorMessage ="Please enter valid password like uppercase,lowecase,symbol and number")]
