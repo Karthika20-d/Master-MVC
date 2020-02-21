@@ -5,84 +5,93 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>SignUp</h2>
+@Html.ValidationSummary(true)
 @if (ViewBag.Message != null)
 {
     Response.Write(ViewBag.Message);
 
 }
 
-<body>
-    @using (Html.BeginForm("SignUp", "User", FormMethod.Get))
-    {
-        <table>
-            <tr>
-                <td>
-                    @Html.Label("Name")
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.name)
-                    @Html.ValidationMessageFor(model => model.name)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.Label("Mail-id")
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.email)
-                    @Html.ValidationMessageFor(model => model.email)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.Label("Phone number")
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.phoneNumber)
-                    @Html.ValidationMessageFor(model => model.phoneNumber)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.Label("Role")
-                </td>
-                <td>
-                    Buyer @Html.RadioButtonFor(Model => Model.role, "Buyer")
-                    Seller @Html.RadioButtonFor(Model => Model.role, "Seller")
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.Label("Location")
+    <body>
+        <h2 style="font-family:Calibri;">SignUp</h2>
+        <section style="float:left;background-color:palevioletred;border:groove;">
+            @Html.Partial("View")
+        </section>
 
-                </td>
-                <td>
-                    @Html.EnumDropDownListFor(Model => Model.location, "Select Location")
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.Label("Password")
-                    
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.password)
-                    @Html.ValidationMessageFor(model => model.password)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.ActionLink("Back", "Index")
-                </td>
-                <td>
-                    <input type="submit" id="=submit" />
-                </td>
-            </tr>
-        </table>
-    }
+        <article>
+            @using (Html.BeginForm("SignUp", "User", FormMethod.Get))
+            {
+                <table align="center" cellspacing="10" cellpadding="10" style="font-family:Calibri;background-color:palevioletred;border:groove;color:white">
 
-</body>
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.name)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(Model => Model.name, htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                            @Html.ValidationMessageFor(model => model.name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.email)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(Model => Model.email, htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                            @Html.ValidationMessageFor(model => model.email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.phoneNumber)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(Model => Model.phoneNumber, htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                            @Html.ValidationMessageFor(model => model.phoneNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.role)
+                        </td>
+                        <td>
+                            Buyer @Html.RadioButtonFor(Model => Model.role, "Buyer", htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                            Seller @Html.RadioButtonFor(Model => Model.role, "Seller", htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.location)
+
+                        </td>
+                        <td>
+                            @Html.EnumDropDownListFor(Model => Model.location, "Select Location", htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.password)
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(Model => Model.password, htmlAttributes: new { style = "border-radius:5px;padding:5px" })
+                            @Html.ValidationMessageFor(model => model.password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Back", "Index")
+                        </td>
+                        <td>
+                            <input type="submit" id="=submit" style="color:palevioletred;background-color:white;padding:8px;" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </article>
+
+    </body>
 
 
 

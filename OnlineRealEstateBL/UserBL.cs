@@ -9,6 +9,7 @@ namespace OnlineRealEstateBL
         {
             return UserRepositary.SignUp(userManager);
         }
+        
     }
 }
 

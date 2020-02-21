@@ -33,7 +33,7 @@ namespace OnlineRealEstate.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create_Post(FormCollection formCollection)
+        public ActionResult Create_Post()
         {
             Land land = new Land();
             UpdateModel(land);

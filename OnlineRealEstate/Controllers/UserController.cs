@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OnlineRealEstateEntity;
+using OnlineRealEstateRepositary;
 using OnlineRealEstateBL;
 using System.Web.Mvc;
 
@@ -17,6 +18,8 @@ namespace OnlineRealEstate.Controllers
         }
         public ActionResult SignUp()
         {
+            IEnumerable<Land> land = LandRepositary.GetLandDetails();
+            ViewBag.Land = land;
             return View();
         }
         [HttpGet]
