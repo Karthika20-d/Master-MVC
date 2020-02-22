@@ -15,7 +15,7 @@ namespace OnlineRealEstate
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Land", action = "DisplayLandDetails", id = UrlParameter.Optional }
             );
         }
     }

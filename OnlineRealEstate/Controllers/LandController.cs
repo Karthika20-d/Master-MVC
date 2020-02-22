@@ -33,10 +33,10 @@ namespace OnlineRealEstate.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create_Post()
+        public ActionResult Create_Post([Bind(Include = "location,area,propertyType")]Land land)
         {
-            Land land = new Land();
-            UpdateModel(land);
+           
+            
             LandRepositary.Add(land);   
             return RedirectToAction("DisplayLandDetails");
         }
@@ -53,10 +53,8 @@ namespace OnlineRealEstate.Controllers
             return RedirectToAction("DisplayLandDetails");
         }
         [HttpPost]
-        public ActionResult Update()
+        public ActionResult Update([Bind(Exclude = "propertyType")]Land land)
         {
-            Land land = new Land();
-            TryUpdateModel(land);
             LandRepositary.Update(land);
             return RedirectToAction("DisplayLandDetails");
 
