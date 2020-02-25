@@ -11,6 +11,8 @@ namespace OnlineRealEstateEntity
     }
     public class UserManager
     {
+        [Key]
+        public int  userId{get; set;}
         [Required(ErrorMessage ="Please enter your name")]
         [Display(Name ="Username")]
         [RegularExpression(@"^[A-Za-z]+$")]
@@ -36,6 +38,7 @@ namespace OnlineRealEstateEntity
         [Display(Name ="Location")]
         public Location location { get; set; }
         
+        public Land Land { get; set; }
         public UserManager()
         {
 

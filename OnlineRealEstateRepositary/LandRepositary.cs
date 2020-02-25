@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OnlineRealEstateEntity;
 namespace OnlineRealEstateRepositary
 {
@@ -37,6 +38,11 @@ namespace OnlineRealEstateRepositary
         public static Land GetLandById(int landId)
         {
             return lands.Find(id => id.landId == landId);
+        }
+        public List<Land> GetLandDetail()
+        {
+            PropertyDBContext propertyDBContext = new PropertyDBContext();
+            return propertyDBContext.LandDetails.ToList();
         }
     }
 }

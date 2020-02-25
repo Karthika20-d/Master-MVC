@@ -123,11 +123,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Styles\Master.css" />
+    <Content Include="Styles\SignUp.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Land\DisplayDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,10 +149,11 @@
     <Content Include="Views\Land\Create.cshtml" />
     <Content Include="Views\Land\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Shared\_Master.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\Shared\View.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
